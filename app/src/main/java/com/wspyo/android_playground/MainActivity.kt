@@ -32,5 +32,11 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("value2","2024-06-06")
             startActivity(intent)
         }
+
+        findViewById<Button>(R.id.listViewBtn).setOnClickListener{
+            startActivity(Intent(this,ListViewPracticeActivity::class.java))
+        }
+
+
     }
 }

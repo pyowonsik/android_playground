@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp">
+
+    <TextView
+        android:text="title"
+        android:textSize="20sp"
+        android:id="@+id/itemTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"/>
+
+    <TextView
+        android:text="content"
+        android:layout_marginLeft="10dp"
+        android:textSize="15sp"
+        android:id="@+id/itemContent"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"/>
+
+</LinearLayout>

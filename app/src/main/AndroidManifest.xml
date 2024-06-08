@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Android_playground"
         tools:targetApi="31">
         <activity
+            android:name=".ListViewPracticeActivity"
+            android:exported="false" />
+        <activity
             android:name=".IntentTestActivity"
             android:exported="false" />
         <activity
@@ -29,7 +32,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>
