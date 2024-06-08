@@ -44,6 +44,15 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/intentBtn" />
 
+    <Button
+        android:text="recyclerView"
+        android:id="@+id/recyclerViewBtn"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/listViewBtn" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
