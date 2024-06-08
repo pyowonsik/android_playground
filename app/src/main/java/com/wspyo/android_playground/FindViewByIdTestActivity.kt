@@ -8,10 +8,12 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.databinding.DataBindingUtil
+import com.wspyo.android_playground.databinding.ActivityFindViewByIdTestBinding
 
 class FindViewByIdTestActivity : AppCompatActivity() {
 
-    private val TAG = MainActivity::class.java.simpleName
+    private val TAG = FindViewByIdTestActivity::class.java.simpleName
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,20 +25,32 @@ class FindViewByIdTestActivity : AppCompatActivity() {
             insets
         }
 
-        val text : TextView = findViewById(R.id.textView)
-        val button1 : Button = findViewById(R.id.button1)
-        val button2 : Button = findViewById(R.id.button2)
+        val binding: ActivityFindViewByIdTestBinding = DataBindingUtil.setContentView(this, R.layout.activity_find_view_by_id_test)
 
-        text.setOnClickListener{
-            Log.d(TAG,text.text.toString())
+
+        // findByView
+        val FBVText : TextView = findViewById(R.id.FBVText)
+        val FBVBtn : Button = findViewById(R.id.FBVBtn)
+
+        FBVText.setOnClickListener{
+            Log.d(TAG,FBVText.text.toString())
         }
 
-        button1.setOnClickListener{
-            Log.d(TAG,button1.text.toString())
+        FBVBtn.setOnClickListener{
+            Log.d(TAG,FBVBtn.text.toString())
         }
 
-        button2.setOnClickListener{
-            Log.d(TAG,button1.text.toString())
+        // dataBinding
+        val DBText : TextView = binding.DBText
+        val DBBtn : Button = binding.DBBtn
+
+
+        DBText.setOnClickListener{
+            Log.d(TAG,DBText.text.toString())
+        }
+
+        DBBtn.setOnClickListener{
+            Log.d(TAG,DBBtn.text.toString())
         }
     }
 }
