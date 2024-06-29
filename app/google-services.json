@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "735902450529",
+    "project_id": "fbpractice-62fab",
+    "storage_bucket": "fbpractice-62fab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:735902450529:android:edad8e0111f146bdf6bb20",
+        "android_client_info": {
+          "package_name": "com.wspyo.android_playground"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDHmmyaRNFBrmTZjrH6eQEqdufz0q3TMI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -9,6 +9,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.wspyo.android_playground.firebase.FireBasePracticeActivity
 import com.wspyo.android_playground.fragment.MainFragmentActivity
 import com.wspyo.android_playground.recyclerview.RecyclerViewPracticeActivity
 
@@ -45,6 +46,11 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.fragmentBtn).setOnClickListener{
             startActivity(Intent(this,MainFragmentActivity::class.java))
+        }
+
+
+        findViewById<Button>(R.id.firebaseBtn).setOnClickListener{
+            startActivity(Intent(this,FireBasePracticeActivity::class.java))
         }
 
 
