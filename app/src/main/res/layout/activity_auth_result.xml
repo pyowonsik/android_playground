@@ -23,7 +23,7 @@
 
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/titleArea"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
@@ -34,14 +34,33 @@
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/logoutBtn"
-        android:layout_margin="30dp"
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="logout"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        android:layout_margin="30dp"
+        app:layout_constraintTop_toBottomOf="@+id/titleArea"
+        >
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/myDataBtn"
+            android:layout_margin="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="my data" />
+
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/logoutBtn"
+            android:layout_margin="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="logout" />
+    </LinearLayout>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

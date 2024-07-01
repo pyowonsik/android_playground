@@ -12,6 +12,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.wspyo.android_playground.R
+import com.wspyo.android_playground.firebase.database.MyDatasActivity
 
 class AuthResultActivity : AppCompatActivity() {
 
@@ -28,6 +29,11 @@ class AuthResultActivity : AppCompatActivity() {
         findViewById<Button>(R.id.logoutBtn).setOnClickListener{
             auth.signOut()
             val intent = Intent(this,FireBasePracticeActivity::class.java)
+            startActivity(intent)
+        }
+
+        findViewById<Button>(R.id.myDataBtn).setOnClickListener{
+            val intent = Intent(this,MyDatasActivity::class.java)
             startActivity(intent)
         }
 
