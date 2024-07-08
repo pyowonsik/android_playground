@@ -1,5 +1,7 @@
 package com.wspyo.android_playground.firebase.database
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -7,6 +9,8 @@ import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.ActivityResultCallback
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -32,8 +36,10 @@ class MyDatasActivity : AppCompatActivity() {
 
     lateinit var rvAdapter: DataRVAdapter
     val dataModelList  = mutableListOf<DataModel>()
+    val itemKeyList = mutableListOf<String>()
 
     val TAG = MyDatasActivity::class.java.simpleName
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,8 +51,9 @@ class MyDatasActivity : AppCompatActivity() {
             showDialog()
         }
 
+
         val rv : RecyclerView = findViewById(R.id.rv_data)
-        rvAdapter = DataRVAdapter(dataModelList,this)
+        rvAdapter = DataRVAdapter(dataModelList,this,itemKeyList)
 
         rv.adapter = rvAdapter
         rv.layoutManager = LinearLayoutManager(this)
@@ -58,9 +65,11 @@ class MyDatasActivity : AppCompatActivity() {
         val postListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 dataModelList.clear()
+                itemKeyList.clear()
               for(data in dataSnapshot.children){
                   val dataModel = data.getValue(DataModel::class.java)
                   dataModelList.add(dataModel!!)
+                  itemKeyList.add(data.key.toString())
               }
 
                 rvAdapter.notifyDataSetChanged()
@@ -91,6 +100,7 @@ class MyDatasActivity : AppCompatActivity() {
         layout.addView(contentInputArea)
         builder.setView(layout)
 
+
         builder.setPositiveButton("확인") { dialog, which ->
             val title = titleInputArea.text.toString()
             val content = contentInputArea.text.toString()
@@ -105,8 +115,6 @@ class MyDatasActivity : AppCompatActivity() {
         builder.setNegativeButton("취소") { dialog, which ->
             dialog.cancel()
         }
-
-
         builder.show()
     }
 }
