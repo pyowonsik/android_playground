@@ -1,17 +1,27 @@
 package com.wspyo.android_playground
 
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.wspyo.android_playground.firebase.FireBasePracticeActivity
 import com.wspyo.android_playground.fragment.MainFragmentActivity
 import com.wspyo.android_playground.recyclerview.RecyclerViewPracticeActivity
+import android.Manifest
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.content.Context
+import android.widget.Toast
+import androidx.core.app.NotificationCompat
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,6 +63,61 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this,FireBasePracticeActivity::class.java))
         }
 
+        findViewById<Button>(R.id.notificationBtn).setOnClickListener{
+                Toast.makeText(this,"알림 보내기",Toast.LENGTH_SHORT).show()
+//            val isTiramisuOrHigher = Build.VERSION.SDK_INT>= Build.VERSION_CODES.TIRAMISU
+//            val notificationPermission = Manifest.permission.POST_NOTIFICATIONS
+//
+//            var hasNotificationPermission =
+//                if (isTiramisuOrHigher)
+//                    ContextCompat.checkSelfPermission(this, notificationPermission) == PackageManager.PERMISSION_GRANTED
+//                else true
+//
+//            val launcher = registerForActivityResult(ActivityResultContracts.RequestPermission()){
+//                hasNotificationPermission = it
+//
+//            }
+//
+//            if (!hasNotificationPermission) {
+//                launcher.launch(notificationPermission)
+//            }
+            createNotificationChannel()
+            sendNotification()
+        }
 
+
+    }
+    private fun createNotificationChannel() {
+        // Create the NotificationChannel, but only on API 26+ because
+        // the NotificationChannel class is not in the Support Library.
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val name = "name"
+            val descriptionText = "description"
+            val importance = NotificationManager.IMPORTANCE_DEFAULT
+            val channel = NotificationChannel("Test_Channel", name, importance).apply {
+                description = descriptionText
+            }
+            // Register the channel with the system.
+            val notificationManager: NotificationManager =
+                getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            notificationManager.createNotificationChannel(channel)
+        }
+    }
+
+
+    private fun sendNotification() {
+        var builder = NotificationCompat.Builder(this, "Test_Channel")
+            .setSmallIcon(R.drawable.ic_launcher_background)
+            .setContentTitle("매칭완료")
+            .setContentText("매칭이 완료 되었습니다. 저사람도 나를 좋아해요")
+            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+            .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+//        with(NotificationManagerCompat.from(this)){
+//            notify(123, builder.build())
+//        }
+
+        val notificationManager =
+            getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        notificationManager.notify(123, builder.build())
     }
 }
