@@ -26,5 +26,9 @@ class AccessViewActivity : AppCompatActivity() {
             startActivity(Intent(this,ViewBindingActivity::class.java))
         }
 
+        findViewById<Button>(R.id.dataBindingBtn).setOnClickListener{
+            startActivity(Intent(this,DataBindingActivity::class.java))
+        }
+
     }
 }
