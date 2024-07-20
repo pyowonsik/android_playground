@@ -3,9 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-
 
     <application
         android:allowBackup="true"
@@ -17,6 +15,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android_playground"
         tools:targetApi="31">
+        <activity
+            android:name=".access_view.ViewBindingFragmentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".access_view.ViewBindingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".access_view.FindViewByIdActivity"
+            android:exported="false" />
+        <activity
+            android:name=".access_view.KotlinExtensionsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".access_view.AccessViewActivity"
+            android:exported="false" />
         <activity
             android:name=".firebase.database.DataDetailActivity"
             android:exported="false" />

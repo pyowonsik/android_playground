@@ -79,4 +79,12 @@
         app:layout_constraintTop_toBottomOf="@+id/firebaseBtn" />
 
 
+    <Button
+        android:text="accessView"
+        android:id="@+id/accessViewBtn"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/notificationBtn" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -22,6 +22,7 @@ import android.app.NotificationManager
 import android.content.Context
 import android.widget.Toast
 import androidx.core.app.NotificationCompat
+import com.wspyo.android_playground.access_view.AccessViewActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -84,7 +85,9 @@ class MainActivity : AppCompatActivity() {
             createNotificationChannel()
             sendNotification()
         }
-
+        findViewById<Button>(R.id.accessViewBtn).setOnClickListener{
+            startActivity(Intent(this,AccessViewActivity::class.java))
+        }
 
     }
     private fun createNotificationChannel() {
