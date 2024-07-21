@@ -28,6 +28,4 @@ class ViewBindingFragment : Fragment() {
 
         return view
     }
-
-
 }

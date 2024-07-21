@@ -16,8 +16,6 @@ class DataBindingActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_data_binding)
-
         bindng = DataBindingUtil.setContentView(this,R.layout.activity_data_binding)
 
         bindng.dataBindingText.text = "Activity : Data Binding 성공"
@@ -25,7 +23,5 @@ class DataBindingActivity : AppCompatActivity() {
         bindng.dataBindingText.setOnClickListener{
             startActivity(Intent(this,DataBindingFragmentActivity::class.java))
         }
-
-
     }
 }

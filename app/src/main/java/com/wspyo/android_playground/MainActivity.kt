@@ -1,28 +1,24 @@
 package com.wspyo.android_playground
 
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
-import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.wspyo.android_playground.firebase.FireBasePracticeActivity
 import com.wspyo.android_playground.fragment.MainFragmentActivity
 import com.wspyo.android_playground.recyclerview.RecyclerViewPracticeActivity
-import android.Manifest
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
 import android.widget.Toast
 import androidx.core.app.NotificationCompat
 import com.wspyo.android_playground.access_view.AccessViewActivity
+import com.wspyo.android_playground.data_binding.DataBindingDeepActivity
+import com.wspyo.android_playground.view_binding_adpter.ViewBindingAdapterActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -89,6 +85,14 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this,AccessViewActivity::class.java))
         }
 
+        findViewById<Button>(R.id.dataBindingDeepBtn).setOnClickListener{
+            startActivity(Intent(this,DataBindingDeepActivity::class.java))
+        }
+
+        findViewById<Button>(R.id.viewBindingAdapterBtb).setOnClickListener{
+            startActivity(Intent(this,ViewBindingAdapterActivity::class.java))
+        }
+
     }
     private fun createNotificationChannel() {
         // Create the NotificationChannel, but only on API 26+ because
@@ -123,4 +127,6 @@ class MainActivity : AppCompatActivity() {
             getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         notificationManager.notify(123, builder.build())
     }
+
+
 }

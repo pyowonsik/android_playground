@@ -87,4 +87,22 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/notificationBtn" />
 
+
+
+    <Button
+        android:text="dataBindingDeep"
+        android:id="@+id/dataBindingDeepBtn"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/accessViewBtn" />
+
+
+    <Button
+        android:text="viewBindingAdapter"
+        android:id="@+id/viewBindingAdapterBtb"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/dataBindingDeepBtn" />
 </androidx.constraintlayout.widget.ConstraintLayout>

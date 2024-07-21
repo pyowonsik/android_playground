@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
-
     <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".access_view.DataBindingFragment">
-
         <!-- TODO: Update blank fragment layout -->
         <TextView
             android:id="@+id/fragmentText"
@@ -14,8 +12,5 @@
             android:layout_height="match_parent"
             android:textSize="40sp"
             android:text="@string/hello_blank_fragment" />
-
-
     </FrameLayout>
-
 </layout>
