@@ -19,6 +19,8 @@ import androidx.core.app.NotificationCompat
 import com.wspyo.android_playground.access_view.AccessViewActivity
 import com.wspyo.android_playground.data_binding.DataBindingDeepActivity
 import com.wspyo.android_playground.view_binding_adpter.ViewBindingAdapterActivity
+import com.wspyo.android_playground.view_model.ViewModelActivity
+import com.wspyo.android_playground.view_model.ViewModelFragmentActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -93,6 +95,13 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this,ViewBindingAdapterActivity::class.java))
         }
 
+        findViewById<Button>(R.id.viewModelBtn).setOnClickListener{
+            startActivity(Intent(this,ViewModelActivity::class.java))
+        }
+
+        findViewById<Button>(R.id.viewModelFramentBtn).setOnClickListener{
+            startActivity(Intent(this,ViewModelFragmentActivity::class.java))
+        }
     }
     private fun createNotificationChannel() {
         // Create the NotificationChannel, but only on API 26+ because
