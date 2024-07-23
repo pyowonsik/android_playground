@@ -124,4 +124,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/viewModelBtn" />
+
+    <Button
+        android:text="shareActivity"
+        android:id="@+id/shareActivityBtn"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/viewModelFramentBtn" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

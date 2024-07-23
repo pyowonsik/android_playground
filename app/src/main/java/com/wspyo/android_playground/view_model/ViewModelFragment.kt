@@ -16,6 +16,7 @@ class ViewModelFragment : Fragment() {
     private lateinit var binding : FragmentViewModelBinding
     private lateinit var viewModel: ViewModel
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }

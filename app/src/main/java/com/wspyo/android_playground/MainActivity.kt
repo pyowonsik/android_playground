@@ -18,6 +18,7 @@ import android.widget.Toast
 import androidx.core.app.NotificationCompat
 import com.wspyo.android_playground.access_view.AccessViewActivity
 import com.wspyo.android_playground.data_binding.DataBindingDeepActivity
+import com.wspyo.android_playground.share_view_model.ShareActivity
 import com.wspyo.android_playground.view_binding_adpter.ViewBindingAdapterActivity
 import com.wspyo.android_playground.view_model.ViewModelActivity
 import com.wspyo.android_playground.view_model.ViewModelFragmentActivity
@@ -101,6 +102,11 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.viewModelFramentBtn).setOnClickListener{
             startActivity(Intent(this,ViewModelFragmentActivity::class.java))
+        }
+
+
+        findViewById<Button>(R.id.shareActivityBtn).setOnClickListener{
+            startActivity(Intent(this,ShareActivity::class.java))
         }
     }
     private fun createNotificationChannel() {

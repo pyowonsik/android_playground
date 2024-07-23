@@ -14,7 +14,7 @@ class ViewModel : ViewModel() {
         resultValue--
     }
 
-    fun getResultValue() : Int {
+    fun getResult() : Int {
         return resultValue;
     }
 }
