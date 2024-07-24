@@ -22,6 +22,7 @@ import com.wspyo.android_playground.share_view_model.ShareActivity
 import com.wspyo.android_playground.view_binding_adpter.ViewBindingAdapterActivity
 import com.wspyo.android_playground.view_model.ViewModelActivity
 import com.wspyo.android_playground.view_model.ViewModelFragmentActivity
+import com.wspyo.android_playground.view_model_factory.ViewModelFactoryActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,9 +35,9 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        findViewById<Button>(R.id.bindingBtn).setOnClickListener{
-            startActivity(Intent(this,FindViewByIdTestActivity::class.java))
-        }
+//        findViewById<Button>(R.id.bindingBtn).setOnClickListener{
+//            startActivity(Intent(this,FindViewByIdTestActivity::class.java))
+//        }
 
 
         findViewById<Button>(R.id.intentBtn).setOnClickListener{
@@ -107,6 +108,10 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.shareActivityBtn).setOnClickListener{
             startActivity(Intent(this,ShareActivity::class.java))
+        }
+
+        findViewById<Button>(R.id.viewModelFactoryActivityBtn).setOnClickListener{
+            startActivity(Intent(this,ViewModelFactoryActivity::class.java))
         }
     }
     private fun createNotificationChannel() {
